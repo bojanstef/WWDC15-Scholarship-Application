@@ -9,18 +9,27 @@
 import UIKit
 
 class ViewController: UIViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
-
+    
     private var pageVC: UIPageViewController?
-    private let contentLabels = ["Hipster", "Hacker", "Hustler", "Bojan Stefanovic"]
-    private let contentImages = ["hipster.jpg", "hacker.jpg", "hustler.jpg", "bojan.jpg"]
+    
+    private let contentLabels = ["UI/UX Designer", "Software Engineer", "Entrepreneur"]
+//    private var contentLabels: [String] = []
+    private let contentImages = ["hipster.jpg", "hacker.jpg", "hustler.jpg"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // Do any additional setup after loading the view.
+        
+//        self.setupLabels()
         self.createPageViewController()
         self.setupPageControl()
     }
 
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -31,6 +40,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIPageVi
     private func createPageViewController() {
         let pageViewController = self.storyboard?.instantiateViewControllerWithIdentifier("PageViewController") as! UIPageViewController
         pageViewController.dataSource = self
+        pageViewController.delegate = self
         
         if contentImages.count > 0 {
             let firstVC = self.getItemController(0)!
@@ -47,9 +57,24 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIPageVi
     private func setupPageControl() {
         let appearance = UIPageControl.appearance()
         appearance.pageIndicatorTintColor = UIColor.darkGrayColor()
-        appearance.currentPageIndicatorTintColor = UIColor.lightGrayColor()
+        appearance.currentPageIndicatorTintColor = UIColor.whiteColor()
         appearance.backgroundColor = UIColor.clearColor()
     }
+    
+//    private func setupLabels() {
+//        var hipster = "Hipster"
+//        var hacker = "Hacker"
+//        var hustler = "Hustler"
+//        
+//        var mutableString = NSMutableAttributedString(string: hipster)
+//        var attrs = [NSFontAttributeName: UIFont.systemFontOfSize(20.0)]
+//        var gString = NSMutableAttributedString(string: "hi", attributes: attrs)
+//        mutableString.appendAttributedString(gString)
+//        
+//        contentLabels.append()
+//        contentLabels.append(hacker)
+//        contentLabels.append(hustler)
+//    }
     
     private func getItemController(itemIndex: Int) -> PageContentViewController? {
         if itemIndex < contentImages.count {
@@ -69,15 +94,15 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIPageVi
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
         let itemVC = viewController as! PageContentViewController
         if itemVC.itemIndex > 0 {
-            return getItemController(itemVC.itemIndex! - 1)
+            return getItemController(itemVC.itemIndex - 1)
         }
         return nil
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         let itemVC = viewController as! PageContentViewController
-        if itemVC.itemIndex! + 1 < self.contentImages.count {
-            return getItemController(itemVC.itemIndex! + 1)
+        if itemVC.itemIndex + 1 < self.contentImages.count {
+            return getItemController(itemVC.itemIndex + 1)
         }
         return nil
     }
@@ -89,7 +114,7 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIPageVi
     func presentationIndexForPageViewController(pageViewController: UIPageViewController) -> Int {
         return 0
     }
-
+    
 }
 
 

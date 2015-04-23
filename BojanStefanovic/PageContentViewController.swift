@@ -14,19 +14,20 @@ class PageContentViewController: UIViewController {
     @IBOutlet weak var contentImageView: UIImageView!
     @IBOutlet weak var learnMoreButton: UIButton!
     
-    var itemIndex: Int?
+    var itemIndex: Int = 0
     
-    var titleText: String? {
+    var titleText: String = "" {
         didSet {
             if let label = self.contentTitleLabel {
-                label.text = self.titleText!
+                label.text = self.titleText
             }
         }
     }
-    var imageName: String? {
+    
+    var imageName: String = "" {
         didSet {
             if let imageView = self.contentImageView {
-                imageView.image = UIImage(named: self.imageName!)
+                imageView.image = UIImage(named: self.imageName)
             }
         }
     }
@@ -35,13 +36,14 @@ class PageContentViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        self.contentImageView.image = UIImage(named: imageName!)        
+        self.contentImageView.image = UIImage(named: imageName)
     }
 
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)          
         
-        self.setupCustomLabel()
+        self.setupCustomButton()
+        self.setupCustomLabel(self.contentTitleLabel, text: self.titleText)
     }
 
     override func didReceiveMemoryWarning() {
@@ -51,12 +53,16 @@ class PageContentViewController: UIViewController {
     
     // MARK: - Helper methods
     
-    func setupCustomLabel() {
-        self.contentTitleLabel.backgroundColor = UIColor(red: 35.0/255.0, green: 35.0/255.0, blue: 35.0/255.0, alpha: 0.75)
-        self.contentTitleLabel.alpha = 0.0
-        self.contentTitleLabel.text = titleText!
+    func setupCustomButton() {
+        self.learnMoreButton.layer.masksToBounds = true
+        self.learnMoreButton.layer.cornerRadius = 5.0
+    }
+    
+    func setupCustomLabel(label: UILabel, text: String) {        
+        label.alpha = 0.0
+        label.text = text
         UIView.animateWithDuration(1.5, animations: { () -> Void in
-            self.contentTitleLabel.alpha = 1.0
+            label.alpha = 1.0
         })
     }
 
