@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		348FEF1B1AE9D5E3009D858B /* ParallaxHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 348FEF141AE9D5E3009D858B /* ParallaxHeaderView.m */; };
+		348FEF1E1AE9D5E3009D858B /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 348FEF1A1AE9D5E3009D858B /* UIImage+ImageEffects.m */; };
+		348FEF2D1AEA148E009D858B /* BottomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348FEF2C1AEA148E009D858B /* BottomTableViewCell.swift */; };
 		34D073931ADF564100C2FD32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D073921ADF564100C2FD32 /* AppDelegate.swift */; };
 		34D073951ADF564100C2FD32 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D073941ADF564100C2FD32 /* ViewController.swift */; };
 		34D073981ADF564100C2FD32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34D073961ADF564100C2FD32 /* Main.storyboard */; };
@@ -30,6 +33,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		348FEF121AE9D5E2009D858B /* BojanStefanovic-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BojanStefanovic-Bridging-Header.h"; sourceTree = "<group>"; };
+		348FEF131AE9D5E3009D858B /* ParallaxHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParallaxHeaderView.h; sourceTree = "<group>"; };
+		348FEF141AE9D5E3009D858B /* ParallaxHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParallaxHeaderView.m; sourceTree = "<group>"; };
+		348FEF191AE9D5E3009D858B /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
+		348FEF1A1AE9D5E3009D858B /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
+		348FEF2C1AEA148E009D858B /* BottomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomTableViewCell.swift; sourceTree = "<group>"; };
 		34D0738D1ADF564100C2FD32 /* BojanStefanovic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BojanStefanovic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34D073911ADF564100C2FD32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34D073921ADF564100C2FD32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +73,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		348FEF201AE9D5F5009D858B /* ParallaxTableViewHeader */ = {
+			isa = PBXGroup;
+			children = (
+				348FEF131AE9D5E3009D858B /* ParallaxHeaderView.h */,
+				348FEF141AE9D5E3009D858B /* ParallaxHeaderView.m */,
+				348FEF191AE9D5E3009D858B /* UIImage+ImageEffects.h */,
+				348FEF1A1AE9D5E3009D858B /* UIImage+ImageEffects.m */,
+			);
+			name = ParallaxTableViewHeader;
+			sourceTree = "<group>";
+		};
+		348FEF2B1AEA1475009D858B /* Table Cells */ = {
+			isa = PBXGroup;
+			children = (
+				34F1AB3A1AE8D2A400EFF64F /* TimelineTableViewCell.swift */,
+				348FEF2C1AEA148E009D858B /* BottomTableViewCell.swift */,
+			);
+			name = "Table Cells";
+			sourceTree = "<group>";
+		};
 		34D073841ADF564100C2FD32 = {
 			isa = PBXGroup;
 			children = (
@@ -87,7 +116,7 @@
 			children = (
 				34D073921ADF564100C2FD32 /* AppDelegate.swift */,
 				34F1AB381AE8C59700EFF64F /* CellData.swift */,
-				34F1AB3A1AE8D2A400EFF64F /* TimelineTableViewCell.swift */,
+				348FEF2B1AEA1475009D858B /* Table Cells */,
 				34D073B21ADF570200C2FD32 /* View Controllers */,
 				34D073961ADF564100C2FD32 /* Main.storyboard */,
 				34D073991ADF564100C2FD32 /* Images.xcassets */,
@@ -100,7 +129,9 @@
 		34D073901ADF564100C2FD32 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				348FEF201AE9D5F5009D858B /* ParallaxTableViewHeader */,
 				34D073911ADF564100C2FD32 /* Info.plist */,
+				348FEF121AE9D5E2009D858B /* BojanStefanovic-Bridging-Header.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -236,7 +267,10 @@
 				34D073B41ADF572A00C2FD32 /* PageContentViewController.swift in Sources */,
 				34F1AB371AE8B8A400EFF64F /* TimelineViewController.swift in Sources */,
 				34D073951ADF564100C2FD32 /* ViewController.swift in Sources */,
+				348FEF2D1AEA148E009D858B /* BottomTableViewCell.swift in Sources */,
 				34F1AB391AE8C59700EFF64F /* CellData.swift in Sources */,
+				348FEF1E1AE9D5E3009D858B /* UIImage+ImageEffects.m in Sources */,
+				348FEF1B1AE9D5E3009D858B /* ParallaxHeaderView.m in Sources */,
 				34F1AB3B1AE8D2A400EFF64F /* TimelineTableViewCell.swift in Sources */,
 				34D073931ADF564100C2FD32 /* AppDelegate.swift in Sources */,
 			);
@@ -361,10 +395,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BojanStefanovic",
+				);
 				INFOPLIST_FILE = BojanStefanovic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BojanStefanovic/BojanStefanovic-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -372,10 +413,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BojanStefanovic",
+				);
 				INFOPLIST_FILE = BojanStefanovic/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BojanStefanovic/BojanStefanovic-Bridging-Header.h";
 			};
 			name = Release;
 		};

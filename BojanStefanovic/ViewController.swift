@@ -13,7 +13,6 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIPageVi
     private var pageVC: UIPageViewController?
     
     private let contentLabels = ["UI/UX Designer", "Software Engineer", "Entrepreneur"]
-//    private var contentLabels: [String] = []
     private let contentImages = ["hipster.jpg", "hacker.jpg", "hustler.jpg"]
     
     override func viewDidLoad() {
@@ -21,7 +20,6 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIPageVi
         
         // Do any additional setup after loading the view.
         
-//        self.setupLabels()
         self.createPageViewController()
         self.setupPageControl()
     }
@@ -60,21 +58,6 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIPageVi
         appearance.currentPageIndicatorTintColor = UIColor.whiteColor()
         appearance.backgroundColor = UIColor.clearColor()
     }
-    
-//    private func setupLabels() {
-//        var hipster = "Hipster"
-//        var hacker = "Hacker"
-//        var hustler = "Hustler"
-//        
-//        var mutableString = NSMutableAttributedString(string: hipster)
-//        var attrs = [NSFontAttributeName: UIFont.systemFontOfSize(20.0)]
-//        var gString = NSMutableAttributedString(string: "hi", attributes: attrs)
-//        mutableString.appendAttributedString(gString)
-//        
-//        contentLabels.append()
-//        contentLabels.append(hacker)
-//        contentLabels.append(hustler)
-//    }
     
     private func getItemController(itemIndex: Int) -> PageContentViewController? {
         if itemIndex < contentImages.count {
@@ -116,14 +99,3 @@ class ViewController: UIViewController, UIPageViewControllerDataSource, UIPageVi
     }
     
 }
-
-
-
-
-
-
-
-
-
-
-

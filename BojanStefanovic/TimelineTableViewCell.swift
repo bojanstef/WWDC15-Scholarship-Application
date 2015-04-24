@@ -9,8 +9,8 @@
 import UIKit
 
 class TimelineTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var tableCellImage: UIImageView!
+    
+    @IBOutlet weak var tableCellDate: UILabel!
     @IBOutlet weak var tableCellLineImage: UIImageView!
     @IBOutlet weak var tableCellLabel: UILabel!
     

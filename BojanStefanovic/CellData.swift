@@ -10,29 +10,31 @@ import Foundation
 
 class CellData {
     struct Entry {
-        let image: String
+        let date: String
         let line: String
         let labelText: String
         
-        init(imageNamed: String, lineNamed: String, text: String) {
-            self.image = imageNamed
+        init(dateText: String, lineNamed: String, text: String) {
+            self.date = dateText
             self.line = lineNamed
             self.labelText = text
         }
     }
     
     let cells = [
-        Entry(imageNamed: "bojanS.jpg", lineNamed: "lineTop.jpg", text: "Born May 19th 1991 in Belgrade Serbia"),
-        Entry(imageNamed: "bojanS.jpg", lineNamed: "line.jpg", text: "Competitive soccer player since birth"),
-        Entry(imageNamed: "bojanS.jpg", lineNamed: "line.jpg", text: "Immigrated to Vancouver, British Columbia in 1992"),
-        Entry(imageNamed: "bojanS.jpg", lineNamed: "line.jpg", text: "Graduated highschool in 2009 with a passion for technology"),
-        Entry(imageNamed: "bojanS.jpg", lineNamed: "line.jpg", text: "Began general engineering in University to specialize in Software in second year"),
-        Entry(imageNamed: "bojanS.jpg", lineNamed: "line.jpg", text: "Finished 3rd year and took a year off to gain experience and build personal projects"),
-        Entry(imageNamed: "bojanS.jpg", lineNamed: "line.jpg", text: "Heavily focused on iOS development mainly in Swift"),
-        Entry(imageNamed: "bojanS.jpg", lineNamed: "line.jpg", text: "Pushed 2 apps to the AppStore with first app at over 1000 downloads named Sorting HApp"),
-        Entry(imageNamed: "bojanS.jpg", lineNamed: "line.jpg", text: "Attended first Hackathon (nwHacks 2015) and received an award from Apple for project DayFill"),
-        Entry(imageNamed: "bojanS.jpg", lineNamed: "line.jpg", text: "Began learning web development"),
-        Entry(imageNamed: "bojanS.jpg", lineNamed: "lineBottom.jpg", text: "Today - Applying for a scholarship to WWDC 2015 for networking opportunities and an experience of a lifetime")
+        Entry(dateText: "May 1991", lineNamed: "lineTop.png", text: "Born in Belgrade Serbia"),
+        Entry(dateText: "", lineNamed: "line.png", text: "Competitive soccer player since birth"),
+        Entry(dateText: "May 1992", lineNamed: "line.png", text: "Immigrated to Vancouver British Columbia"),
+        Entry(dateText: "May 2009", lineNamed: "line.png", text: "Graduated highschool with a passion for technology"),
+        Entry(dateText: "", lineNamed: "line.png", text: "Worked to save up for University"),
+        Entry(dateText: "Sept 2011", lineNamed: "line.png", text: "Began engineering transfer program at Kwantlen University"),
+        Entry(dateText: "Sept 2012", lineNamed: "line.png", text: "Specialized in Software Engineering at University of British Columbia"),
+        Entry(dateText: "May 2013", lineNamed: "line.png", text: "Finished 3rd year and took a year off to gain experience and build personal projects"),
+        Entry(dateText: "", lineNamed: "line.png", text: "Heavily focused on iOS development mainly in Swift"),
+        Entry(dateText: "", lineNamed: "line.png", text: "Pushed 2 apps to the AppStore - Sorting HApp and WordUp"),
+        Entry(dateText: "Mar 2015", lineNamed: "line.png", text: "Attended first Hackathon - nwHacks and received an award from Apple for project DayFill"),
+        Entry(dateText: "Mar 2015", lineNamed: "line.png", text: "Began learning web development"),
+        Entry(dateText: "April 2015", lineNamed: "lineBottom.png", text: "Applying for scholarship to WWDC 2015 for an experience of a lifetime")
     ]
     
 }

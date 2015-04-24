@@ -13,11 +13,26 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var tableView: UITableView!
     
     let cellData = CellData()
+    
     let tableViewCellIdentifier = "tableCell"
+    let bottomCellIdentifier = "bottomTableCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        let headerView: ParallaxHeaderView = ParallaxHeaderView.parallaxHeaderViewWithImage(UIImage(named: "majorlazer.png"), forSize: CGSizeMake(self.tableView.frame.size.height, 200.0)) as! ParallaxHeaderView
+
+        // Tap Gesture to return to previous view
+        headerView.userInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: "headerTapped")
+        headerView.addGestureRecognizer(tapGesture)
+        
+        // Label settings
+        headerView.headerTitleLabel.font = UIFont(name: "HelveticaNeue-Medium", size: CGFloat(36.0))
+        headerView.headerTitleLabel.text = "Bojan Stefanovic"
+        
+        self.tableView.tableHeaderView = headerView                
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -41,30 +56,66 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
     // MARK: - UITableViewDataSource methods
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cellData.cells.count
+        if section == 0 {
+            return cellData.cells.count
+        }
+        else {
+            return 1
+        }
+
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier(tableViewCellIdentifier, forIndexPath: indexPath) as! TimelineTableViewCell
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCellWithIdentifier(tableViewCellIdentifier, forIndexPath: indexPath) as! TimelineTableViewCell
         
-        let entry = cellData.cells[indexPath.row]
+            let entry = cellData.cells[indexPath.row]
         
-        let cellImage = UIImage(named: entry.image)
-        let cellLineImage = UIImage(named: entry.line)
+            let cellDate = entry.date
+            let cellLineImage = UIImage(named: entry.line)
 
-        cell.tableCellImage.image = cellImage
-        cell.tableCellLineImage.image = cellLineImage
-        cell.tableCellLabel.text = entry.labelText
+            cell.tableCellDate.text = cellDate
+            cell.tableCellLineImage.image = cellLineImage
+            cell.tableCellLabel.text = entry.labelText
         
-        return cell
+            return cell
+        }
+        else {
+            let bottomCell = tableView.dequeueReusableCellWithIdentifier(bottomCellIdentifier, forIndexPath: indexPath) as! BottomTableViewCell
+            
+            return bottomCell
+        }
     }
     
-    // UITableViewDelegate methods
+    // MARK: - UITableView methods
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return CGFloat(160.0)
+        }
+        else {
+            return CGFloat(300.0)
+        }
+    }
+    
+    //
+//    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+//        let footerView = UIView(frame: CGRectMake(0, 0, tableView.frame.size.width, 200.0))
+//        footerView.backgroundColor = UIColor.blackColor()
+//        
+//        return footerView
+//    }
+//    
+//    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+//        return 200.0
+//    }
+    
+    // MARK: - UITableViewDelegate methods
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
@@ -74,19 +125,19 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         println(cellData.cells[row].labelText)
     }
     
+    // MARK: UIScrollViewDelegate methods
+    
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        let header: ParallaxHeaderView = self.tableView.tableHeaderView as! ParallaxHeaderView
+        header.layoutHeaderViewForScrollViewOffset(scrollView.contentOffset)
+        
+        self.tableView.tableHeaderView = header
+    }
+    
+    // MARK: - Helper methods
+    
+    func headerTapped() {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

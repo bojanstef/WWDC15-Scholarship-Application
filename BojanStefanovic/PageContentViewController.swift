@@ -67,10 +67,3 @@ class PageContentViewController: UIViewController {
     }
 
 }
-
-
-
-
-
-
-
