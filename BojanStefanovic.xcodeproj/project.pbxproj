@@ -10,6 +10,7 @@
 		348FEF1B1AE9D5E3009D858B /* ParallaxHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 348FEF141AE9D5E3009D858B /* ParallaxHeaderView.m */; };
 		348FEF1E1AE9D5E3009D858B /* UIImage+ImageEffects.m in Sources */ = {isa = PBXBuildFile; fileRef = 348FEF1A1AE9D5E3009D858B /* UIImage+ImageEffects.m */; };
 		348FEF2D1AEA148E009D858B /* BottomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348FEF2C1AEA148E009D858B /* BottomTableViewCell.swift */; };
+		34CEB72F1AEB4EE200A8EA90 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CEB72E1AEB4EE200A8EA90 /* WebViewController.swift */; };
 		34D073931ADF564100C2FD32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D073921ADF564100C2FD32 /* AppDelegate.swift */; };
 		34D073951ADF564100C2FD32 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34D073941ADF564100C2FD32 /* ViewController.swift */; };
 		34D073981ADF564100C2FD32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 34D073961ADF564100C2FD32 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 		348FEF191AE9D5E3009D858B /* UIImage+ImageEffects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ImageEffects.h"; sourceTree = "<group>"; };
 		348FEF1A1AE9D5E3009D858B /* UIImage+ImageEffects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ImageEffects.m"; sourceTree = "<group>"; };
 		348FEF2C1AEA148E009D858B /* BottomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BottomTableViewCell.swift; sourceTree = "<group>"; };
+		34CEB72E1AEB4EE200A8EA90 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		34D0738D1ADF564100C2FD32 /* BojanStefanovic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BojanStefanovic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34D073911ADF564100C2FD32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34D073921ADF564100C2FD32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				34D073941ADF564100C2FD32 /* ViewController.swift */,
 				34D073B31ADF572A00C2FD32 /* PageContentViewController.swift */,
 				34F1AB361AE8B8A400EFF64F /* TimelineViewController.swift */,
+				34CEB72E1AEB4EE200A8EA90 /* WebViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 			files = (
 				34D073B41ADF572A00C2FD32 /* PageContentViewController.swift in Sources */,
 				34F1AB371AE8B8A400EFF64F /* TimelineViewController.swift in Sources */,
+				34CEB72F1AEB4EE200A8EA90 /* WebViewController.swift in Sources */,
 				34D073951ADF564100C2FD32 /* ViewController.swift in Sources */,
 				348FEF2D1AEA148E009D858B /* BottomTableViewCell.swift in Sources */,
 				34F1AB391AE8C59700EFF64F /* CellData.swift in Sources */,

@@ -61,7 +61,7 @@ class PageContentViewController: UIViewController {
     func setupCustomLabel(label: UILabel, text: String) {        
         label.alpha = 0.0
         label.text = text
-        UIView.animateWithDuration(1.5, animations: { () -> Void in
+        UIView.animateWithDuration(1.0, animations: { () -> Void in
             label.alpha = 1.0
         })
     }

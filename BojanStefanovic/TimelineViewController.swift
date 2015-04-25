@@ -9,7 +9,7 @@
 import UIKit
 
 class TimelineViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     let cellData = CellData()
@@ -46,11 +46,33 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    // MARK: - IBAction methods
     
-    @IBAction func nameButtonPressed(sender: UIButton) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "githubSegue" {
+            let webVC: WebViewController = segue.destinationViewController as! WebViewController
+            webVC.webURL = "https://github.com/bojanstef"
+        }
+        
+        else if segue.identifier == "twitterSegue" {
+            let webVC: WebViewController = segue.destinationViewController as! WebViewController
+            webVC.webURL = "https://twitter.com/bojanstef"
+        }
+            
+        else if segue.identifier == "docSegue" {
+            let webVC: WebViewController = segue.destinationViewController as! WebViewController
+            webVC.webURL = "http://goo.gl/0ZG5p3"
+        }
+            
+        else if segue.identifier == "sheetSegue" {
+            let webVC: WebViewController = segue.destinationViewController as! WebViewController
+            webVC.webURL = "http://goo.gl/xzfoCY"
+        }
+        
+        else {
+            println("Unexpected segue identifier: \(segue.identifier)")
+        }
+        
     }
     
     // MARK: - UITableViewDataSource methods
@@ -102,18 +124,6 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
             return CGFloat(300.0)
         }
     }
-    
-    //
-//    func tableView(tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-//        let footerView = UIView(frame: CGRectMake(0, 0, tableView.frame.size.width, 200.0))
-//        footerView.backgroundColor = UIColor.blackColor()
-//        
-//        return footerView
-//    }
-//    
-//    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-//        return 200.0
-//    }
     
     // MARK: - UITableViewDelegate methods
     
