@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WebViewController: UIViewController {
+class WebViewController: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var webView: UIWebView!
     
@@ -17,11 +17,14 @@ class WebViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        // Do any additional setup after loading the view.
         
-        let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
-        dispatch_async(dispatch_get_global_queue(priority, 0), { () -> Void in
-            self.webView.loadRequest(NSURLRequest(URL: NSURL(string: self.webURL)!))
-        })
+        webView.loadRequest(NSURLRequest(URL: NSURL(string: webURL)!))
     }
 
     override func didReceiveMemoryWarning() {

@@ -21,18 +21,20 @@ class TimelineViewController: UIViewController, UITableViewDataSource, UITableVi
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        let headerView: ParallaxHeaderView = ParallaxHeaderView.parallaxHeaderViewWithImage(UIImage(named: "majorlazer.png"), forSize: CGSizeMake(self.tableView.frame.size.height, 200.0)) as! ParallaxHeaderView
-
+        let headerImage = UIImage(named: "faceBanner.png")
+        let headerView: ParallaxHeaderView = ParallaxHeaderView.parallaxHeaderViewWithImage(headerImage, forSize: CGSizeMake(self.view.frame.size.width, 200.0)) as! ParallaxHeaderView
+        
         // Tap Gesture to return to previous view
         headerView.userInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: "headerTapped")
         headerView.addGestureRecognizer(tapGesture)
         
         // Label settings
-        headerView.headerTitleLabel.font = UIFont(name: "HelveticaNeue-Medium", size: CGFloat(36.0))
+        headerView.headerTitleLabel.font = UIFont(name: "HelveticaNeue-Medium", size: CGFloat(32.0))
         headerView.headerTitleLabel.text = "Bojan Stefanovic"
+        headerView.headerTitleLabel.frame.origin.y -= 60.0
         
-        self.tableView.tableHeaderView = headerView                
+        self.tableView.tableHeaderView = headerView
         
         tableView.dataSource = self
         tableView.delegate = self

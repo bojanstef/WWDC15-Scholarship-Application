@@ -75,7 +75,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		348FEF201AE9D5F5009D858B /* ParallaxTableViewHeader */ = {
+		348FEF201AE9D5F5009D858B /* ParallaxHeaderView */ = {
 			isa = PBXGroup;
 			children = (
 				348FEF131AE9D5E3009D858B /* ParallaxHeaderView.h */,
@@ -83,7 +83,7 @@
 				348FEF191AE9D5E3009D858B /* UIImage+ImageEffects.h */,
 				348FEF1A1AE9D5E3009D858B /* UIImage+ImageEffects.m */,
 			);
-			name = ParallaxTableViewHeader;
+			name = ParallaxHeaderView;
 			sourceTree = "<group>";
 		};
 		348FEF2B1AEA1475009D858B /* Table Cells */ = {
@@ -131,7 +131,7 @@
 		34D073901ADF564100C2FD32 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				348FEF201AE9D5F5009D858B /* ParallaxTableViewHeader */,
+				348FEF201AE9D5F5009D858B /* ParallaxHeaderView */,
 				34D073911ADF564100C2FD32 /* Info.plist */,
 				348FEF121AE9D5E2009D858B /* BojanStefanovic-Bridging-Header.h */,
 			);

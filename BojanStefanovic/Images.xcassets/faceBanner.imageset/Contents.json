@@ -3,17 +3,17 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "octocat.png"
+      "filename" : "faceBanner.png"
     },
     {
       "idiom" : "universal",
       "scale" : "2x",
-      "filename" : "octocat@2x.png"
+      "filename" : "faceBanner@2x.png"
     },
     {
       "idiom" : "universal",
       "scale" : "3x",
-      "filename" : "octocat@3x.png"
+      "filename" : "faceBanner@3x.png"
     }
   ],
   "info" : {
